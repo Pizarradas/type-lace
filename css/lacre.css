@@ -1,0 +1,388 @@
+/* capa: producto — página de Ganzúa Lacre sobre SYX 5.1 (tema base example-01, modo claro)
+ *
+ * Dirección: papel blanco, tinta sumi y un solo acento, el rojo de un sello. Mucho blanco,
+ * filetes de un píxel, tipografía pequeña y espaciada para lo secundario. SYX regula todo:
+ * la página solo cambia valores de tokens que SYX declara y añade piezas lacre-* donde SYX
+ * no llega (CONSUMING.md). Orden: 1 fuente · 2 identidad · 3 tokens y piezas del proyecto.
+ */
+@layer syx.reset, syx.base, syx.tokens, syx.atoms, syx.molecules, syx.organisms, syx.app, syx.utilities;
+
+/* ── 1. Fuente ──────────────────────────────────────────────────────────────────── */
+@font-face {
+  font-family: "Ganzua Lacre";
+  src: url("../fonts/GanzuaLacre-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+/* La v0.4, solo para la comparación A/B del proceso */
+@font-face {
+  font-family: "Ganzua Lacre v04";
+  src: url("../fonts/GanzuaLacre-v04.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+/* Respaldo ajustado, medido por web_export.py de la skill */
+@font-face {
+  font-family: "Ganzua Lacre Fallback";
+  src: local("Arial");
+  size-adjust: 102.98%;
+  ascent-override: 94.67%;
+  descent-override: 26.70%;
+  line-gap-override: 0%;
+}
+
+/* ── 2. Identidad: papel, sumi y el rojo del sello ────────────────────────────────────
+ * Un solo modo, claro: el HTML fija data-theme="light". El tema declara sus valores en
+ * :root y en :root[data-theme=…]; la sobrescritura repite esos selectores. */
+:root,
+:root[data-theme="light"],
+:root[data-theme="dark"] {
+  /* papel */
+  --semantic-color-bg-primary: oklch(0.993 0.003 90);
+  --semantic-color-bg-secondary: oklch(0.976 0.005 85);
+  --semantic-color-bg-tertiary: oklch(0.955 0.006 85);
+  --semantic-color-bg-emphasis: oklch(0.21 0.008 60);
+  --semantic-color-bg-inverse: oklch(0.21 0.008 60);
+
+  /* sumi */
+  --semantic-color-text-primary: oklch(0.21 0.008 60);
+  --semantic-color-text-secondary: oklch(0.40 0.008 60);
+  --semantic-color-text-tertiary: oklch(0.50 0.008 60);
+  --semantic-color-text-inverse: oklch(0.993 0.003 90);
+  --semantic-color-placeholder: oklch(0.55 0.008 60);
+
+  /* filetes */
+  --semantic-color-border-subtle: oklch(0.925 0.004 80);
+  --semantic-color-border-default: oklch(0.87 0.005 80);
+  --semantic-color-border-strong: oklch(0.55 0.008 60);
+  --semantic-color-border-control: oklch(0.55 0.008 60);
+  --semantic-color-border-focus: oklch(0.50 0.18 30);
+  --semantic-focus-ring-color: oklch(0.50 0.18 30);
+
+  /* primario: el rojo del sello (shu) */
+  --semantic-color-primary: oklch(0.55 0.19 30);
+  --semantic-color-primary-strong: oklch(0.49 0.18 30);
+  --semantic-color-primary-text: oklch(0.50 0.18 30);
+  --semantic-color-on-primary: oklch(0.993 0.003 90);
+  --semantic-color-on-primary-strong: oklch(0.993 0.003 90);
+  --semantic-color-state-hover-primary: oklch(0.48 0.18 30);
+  --semantic-color-on-state-hover-primary: oklch(0.993 0.003 90);
+
+  /* secundario y terciario: la propia tinta */
+  --semantic-color-secondary: oklch(0.21 0.008 60);
+  --semantic-color-secondary-strong: oklch(0.21 0.008 60);
+  --semantic-color-secondary-text: oklch(0.21 0.008 60);
+  --semantic-color-on-secondary: oklch(0.993 0.003 90);
+  --semantic-color-state-hover-secondary: oklch(0.21 0.008 60);
+  --semantic-color-on-state-hover-secondary: oklch(0.993 0.003 90);
+  --semantic-color-tertiary: oklch(0.40 0.008 60);
+  --semantic-color-tertiary-text: oklch(0.40 0.008 60);
+  --semantic-color-on-tertiary: oklch(0.993 0.003 90);
+  --semantic-color-on-emphasis: oklch(0.993 0.003 90);
+
+  /* enlaces y selección */
+  --semantic-color-link-default: oklch(0.21 0.008 60);
+  --semantic-color-link-hover: oklch(0.50 0.18 30);
+  --semantic-color-link-visited: oklch(0.40 0.008 60);
+  --semantic-color-link-active: oklch(0.50 0.18 30);
+  --semantic-color-selection-bg: oklch(0.55 0.19 30);
+  --semantic-color-selection-text: oklch(0.993 0.003 90);
+
+  /* estados: el aviso es rojo de sello; la información, tinta */
+  --semantic-color-state-warning: oklch(0.55 0.19 30);
+  --semantic-color-state-warning-text: oklch(0.50 0.18 30);
+  --semantic-color-state-info: oklch(0.40 0.008 60);
+  --semantic-color-state-info-text: oklch(0.21 0.008 60);
+
+  /* tonos suaves */
+  --semantic-color-tone-primary-subtle-bg: color-mix(in oklab, oklch(0.55 0.19 30) 6%, oklch(0.993 0.003 90));
+  --semantic-color-tone-primary-subtle-fg: oklch(0.50 0.18 30);
+  --semantic-color-tone-primary-subtle-border: color-mix(in oklab, oklch(0.55 0.19 30) 30%, oklch(0.993 0.003 90));
+
+  /* forma: sin radios ni sombras, el papel no tiene volumen */
+  --theme-radius: 0;
+  --semantic-border-radius-sm: 0;
+  --semantic-border-radius-default: 0;
+  --semantic-border-radius-lg: 0;
+  --semantic-border-radius-xl: 0;
+  --semantic-border-radius-2xl: 0;
+  --semantic-shadow-card: none;
+  --semantic-shadow-sm: none;
+  --semantic-shadow-md: none;
+  /* marcas de lista en tinta: el rojo queda para lo que importa */
+  --component-list-icon-filter: var(--semantic-filter-black);
+
+  /* tipografía: Lacre tiene un único peso; ningún rol pide negrita sintética */
+  --semantic-font-family-primary: "Ganzua Lacre", "Ganzua Lacre Fallback", system-ui, sans-serif;
+  --semantic-font-family-primary-bold: "Ganzua Lacre", "Ganzua Lacre Fallback", system-ui, sans-serif;
+  --semantic-font-family-heading: "Ganzua Lacre", "Ganzua Lacre Fallback", system-ui, sans-serif;
+  --semantic-font-family-heading-md: "Ganzua Lacre", "Ganzua Lacre Fallback", system-ui, sans-serif;
+  --semantic-font-weight-heading: 400;
+  --semantic-font-weight-heading-md: 400;
+  --semantic-font-weight-primary-bold: 400;
+  --semantic-font-weight-medium: 400;
+  --semantic-font-weight-bold: 400;
+  --semantic-font-weight-black: 400;
+  --semantic-letter-spacing-tight: 0em;
+}
+
+/* ── 3. Tokens del proyecto ───────────────────────────────────────────────────────── */
+:root {
+  --lacre-display-size: clamp(4.5rem, 2.5rem + 10vw, 11rem);
+  --lacre-display-line: 0.9;
+  --lacre-specimen-size: clamp(2rem, 1.4rem + 2.6vw, 4rem);
+  --lacre-tester-size: 56px;
+  --lacre-glyph-cell: 4rem;
+  --lacre-glyph-size: 1.75rem;
+  --lacre-seal-size: 4.5rem;
+  --lacre-measure: 58ch;
+  --lacre-hairline: 1px;
+  --lacre-accent-line: 2px;
+  --lacre-line-tight: 1;
+  --lacre-line-tester: 1.15;
+  --lacre-tester-lines: 2.2;
+  --lacre-range-track: 1px;
+  --lacre-range-thumb: 0.875rem;
+  --lacre-section-space: clamp(5rem, 3rem + 8vw, 10rem);
+  --lacre-hero-space: clamp(5rem, 3rem + 12vw, 13rem);
+  --lacre-tracking: 0.24em;
+
+  --lacre-paper: var(--semantic-color-bg-primary);
+  --lacre-paper-soft: var(--semantic-color-bg-secondary);
+  --lacre-ink: var(--semantic-color-text-primary);
+  --lacre-text-soft: var(--semantic-color-text-secondary);
+  --lacre-text-faint: var(--semantic-color-text-tertiary);
+  --lacre-shu: var(--semantic-color-primary);
+  --lacre-shu-text: var(--semantic-color-primary-text);
+  --lacre-line: var(--semantic-color-border-default);
+  --lacre-line-soft: var(--semantic-color-border-subtle);
+  --lacre-line-control: var(--semantic-color-border-control);
+  --lacre-pad: var(--semantic-space-component-md);
+  --lacre-font: var(--semantic-font-family-primary);
+  --lacre-font-mono: var(--semantic-font-family-mono);
+  --lacre-caption: var(--semantic-font-size-caption);
+}
+
+@layer syx.app {
+  /* el reset del tema fija la fuente en html con su propio token; los elementos base leen la del proyecto */
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--lacre-font);
+    font-synthesis: none;
+    letter-spacing: var(--semantic-letter-spacing-normal);
+  }
+  html {
+    color-scheme: light;
+  }
+  body {
+    background: var(--lacre-paper);
+    color: var(--lacre-text-soft);
+  }
+  /* sin negrita, el énfasis es de color: el rojo del sello */
+  strong {
+    font-weight: inherit;
+    color: var(--lacre-shu-text);
+  }
+
+  /* syx-reuse-file: las piezas lacre-* solo colocan o dibujan lo que SYX no tiene
+     (cartel, sello, rótulo vertical, muestrario, probador, fórmula); botones, tarjetas,
+     listas, tablas, avisos, cifras y rejilla son de SYX */
+
+  /* syx-reuse: checked syx-pad-section (un solo relleno, xxl), syx-bg-color-secondary (es color de marca) — secciones separadas por un filete y mucho blanco */
+  .lacre-section {
+    padding-block: var(--lacre-section-space);
+    border-block-start: var(--lacre-hairline) solid var(--lacre-line-soft);
+  }
+  .lacre-section--hero {
+    padding-block: var(--lacre-hero-space);
+    border-block-start: none;
+  }
+
+  /* syx-reuse: checked atom-title (tamaño fijo por nivel) — el nombre necesita tamaño de cartel */
+  .lacre-hero__title {
+    margin: 0;
+    font-family: var(--lacre-font);
+    font-size: var(--lacre-display-size);
+    line-height: var(--lacre-display-line);
+    color: var(--lacre-ink);
+  }
+  .lacre-hero__lead {
+    max-inline-size: var(--lacre-measure);
+    color: var(--lacre-text-soft);
+    font-size: var(--semantic-font-size-body-large);
+  }
+
+  /* syx-reuse: checked syx-type-overline (horizontal) — rótulo vertical a la manera de un margen japonés */
+  .lacre-vertical {
+    margin: 0;
+    writing-mode: vertical-rl;
+    color: var(--lacre-text-faint);
+    font-size: var(--lacre-caption);
+    letter-spacing: var(--lacre-tracking);
+    text-transform: uppercase;
+  }
+
+  /* syx-reuse: checked atom-avatar, atom-feature-icon — un sello rojo (hanko) dibujado en SVG */
+  .lacre-seal {
+    inline-size: var(--lacre-seal-size);
+    block-size: var(--lacre-seal-size);
+    flex: none;
+  }
+  .lacre-seal__wax {
+    fill: var(--lacre-shu);
+  }
+  .lacre-seal__letter {
+    fill: var(--lacre-paper);
+    font-family: var(--lacre-font);
+  }
+
+  /* syx-reuse: checked syx-type-overline (sin control de tracking propio) — datos de ficha, pequeños y espaciados */
+  .lacre-meta {
+    color: var(--lacre-text-faint);
+    font-size: var(--lacre-caption);
+    letter-spacing: var(--lacre-tracking);
+    text-transform: uppercase;
+  }
+
+  /* syx-reuse: checked atom-title (tamaño fijo por nivel) — el muestrario necesita tamaño de cartel */
+  .lacre-specimen {
+    margin: 0;
+    font-family: var(--lacre-font);
+    font-size: var(--lacre-specimen-size);
+    line-height: var(--lacre-line-tight);
+    color: var(--lacre-ink);
+    overflow-wrap: anywhere;
+  }
+  .lacre-specimen--shu {
+    color: var(--lacre-shu-text);
+  }
+  .lacre-specimen--v04 {
+    font-family: "Ganzua Lacre v04", var(--lacre-font);
+  }
+
+  /* syx-reuse: checked atom-textarea (caja de formulario) — el probador es texto editable a tamaño de cartel, solo con un filete inferior */
+  .lacre-tester {
+    min-block-size: calc(var(--lacre-tester-size) * var(--lacre-tester-lines));
+    padding-block: var(--lacre-pad);
+    font-family: var(--lacre-font);
+    font-size: var(--lacre-tester-size);
+    line-height: var(--lacre-line-tester);
+    color: var(--lacre-ink);
+    border-block-end: var(--lacre-hairline) solid var(--lacre-line);
+    overflow-wrap: anywhere;
+  }
+  .lacre-tester:focus-visible {
+    outline: var(--semantic-focus-ring-width) var(--semantic-focus-ring-style) var(--semantic-focus-ring-color);
+    outline-offset: var(--semantic-focus-ring-offset);
+  }
+
+  /* syx-reuse: checked atom-input, atom-progress — SYX no tiene control deslizante */
+  .lacre-range {
+    inline-size: 100%;
+    block-size: var(--lacre-range-thumb);
+    margin: 0;
+    background: transparent;
+    appearance: none;
+    cursor: pointer;
+  }
+  .lacre-range::-webkit-slider-runnable-track {
+    block-size: var(--lacre-range-track);
+    background: var(--lacre-line-control);
+  }
+  .lacre-range::-moz-range-track {
+    block-size: var(--lacre-range-track);
+    background: var(--lacre-line-control);
+  }
+  .lacre-range::-webkit-slider-thumb {
+    inline-size: var(--lacre-range-thumb);
+    block-size: var(--lacre-range-thumb);
+    margin-block-start: calc((var(--lacre-range-track) - var(--lacre-range-thumb)) / 2);
+    background: var(--lacre-shu);
+    border: none;
+    border-radius: var(--semantic-border-radius-circle);
+    appearance: none;
+  }
+  .lacre-range::-moz-range-thumb {
+    inline-size: var(--lacre-range-thumb);
+    block-size: var(--lacre-range-thumb);
+    background: var(--lacre-shu);
+    border: none;
+    border-radius: var(--semantic-border-radius-circle);
+  }
+  .lacre-range:focus-visible {
+    outline: var(--semantic-focus-ring-width) var(--semantic-focus-ring-style) var(--semantic-focus-ring-color);
+    outline-offset: var(--semantic-focus-ring-offset);
+  }
+
+  /* syx-reuse: checked atom-table, layout-grid — rejilla de caracteres de celda fija, en filete */
+  .lacre-glyphs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--lacre-glyph-cell), 1fr));
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-block-start: var(--lacre-hairline) solid var(--lacre-line-soft);
+    border-inline-start: var(--lacre-hairline) solid var(--lacre-line-soft);
+  }
+  .lacre-glyphs__cell {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1;
+    font-family: var(--lacre-font);
+    font-size: var(--lacre-glyph-size);
+    color: var(--lacre-ink);
+    border-block-end: var(--lacre-hairline) solid var(--lacre-line-soft);
+    border-inline-end: var(--lacre-hairline) solid var(--lacre-line-soft);
+  }
+
+  /* syx-reuse: checked atom-code (superficie oscura fija) — una fórmula sobre el papel */
+  .lacre-formula {
+    margin: 0;
+    padding: var(--lacre-pad);
+    font-family: var(--lacre-font-mono);
+    font-size: var(--semantic-font-size-body-small);
+    color: var(--lacre-ink);
+    background: var(--lacre-paper-soft);
+    border-inline-start: var(--lacre-accent-line) solid var(--lacre-shu);
+    overflow-x: auto;
+  }
+
+  /* syx-reuse: checked mol-card — la figura del proceso no lleva cabecera ni cuerpo */
+  .lacre-figure {
+    margin: 0;
+  }
+  .lacre-figure__img {
+    display: block;
+    inline-size: 100%;
+    block-size: auto;
+    border: var(--lacre-hairline) solid var(--lacre-line-soft);
+  }
+  .lacre-figure__caption {
+    margin-block-start: var(--semantic-space-stack-xs);
+    color: var(--lacre-text-faint);
+    font-size: var(--lacre-caption);
+  }
+
+  /* syx-reuse: checked syx-text-muted (terciario, flojo para párrafos), syx-text-secondary (color de marca) — texto de apoyo en el secundario del sistema */
+  .lacre-soft {
+    color: var(--lacre-text-soft);
+  }
+  .lacre-measure {
+    max-inline-size: var(--lacre-measure);
+  }
+
+  /* syx-reuse: checked org-site-header (no hay pie en SYX), mol-card — pie con un filete, sin superficie */
+  .lacre-footer {
+    padding-block: var(--lacre-section-space);
+    color: var(--lacre-text-faint);
+    font-size: var(--lacre-caption);
+    border-block-start: var(--lacre-hairline) solid var(--lacre-line-soft);
+  }
+}

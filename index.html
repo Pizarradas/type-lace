@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ganzúa Lacre — una tipografía de plumilla y cincel</title>
+  <meta name="description" content="Ganzúa Lacre: tipografía para una sala de escape, hecha de principio a fin con la skill abierta syx--typography. Descárgala, pruébala y mira cómo se hizo.">
+  <meta name="theme-color" content="#fdfcf9">
+  <link rel="preload" href="fonts/GanzuaLacre-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="vendor/syx/example-01.full.min.css">
+  <link rel="stylesheet" href="css/lacre.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23c0392b'/%3E%3C/svg%3E">
+  <script type="module" src="vendor/syx/js/syx-site-nav.js"></script>
+  <script src="js/lacre.js" defer></script>
+</head>
+<body>
+  <a class="syx-skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="org-site-header">
+    <a class="org-site-header__brand" href="#inicio">Lacre</a>
+    <nav class="org-site-header__nav" aria-label="Secciones">
+      <a href="#probar">Probar</a>
+      <a href="#descargar">Descargar</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#skill">La skill</a>
+    </nav>
+    <div class="org-site-header__actions">
+      <button class="org-site-header__burger" type="button" aria-controls="cajon" aria-expanded="false" aria-label="Abrir la navegación">
+        <span class="org-site-header__burger-line" aria-hidden="true"></span>
+        <span class="org-site-header__burger-line" aria-hidden="true"></span>
+        <span class="org-site-header__burger-line" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+  <div class="org-site-nav-overlay" aria-hidden="true"></div>
+  <nav class="org-site-nav-drawer" id="cajon" aria-label="Secciones en móvil">
+    <a class="org-site-nav-drawer__link" href="#probar">Probar</a>
+    <a class="org-site-nav-drawer__link" href="#descargar">Descargar</a>
+    <a class="org-site-nav-drawer__link" href="#proceso">Proceso</a>
+    <a class="org-site-nav-drawer__link" href="#skill">La skill</a>
+  </nav>
+
+  <main id="contenido">
+
+    <!-- Cartel ------------------------------------------------------------------------------>
+    <section class="lacre-section lacre-section--hero" id="inicio" aria-labelledby="titulo">
+      <div class="layout-grid">
+        <div class="layout-grid__col-lg-1 syx-d-lg-up" aria-hidden="true">
+          <p class="lacre-vertical">Plumilla 20° / cincel 26°</p>
+        </div>
+        <div class="layout-grid__col-xs-12 layout-grid__col-lg-10 layout-stack layout-stack--xl">
+          <p class="syx-type-overline syx-text-primary syx-m-0">Ganzúa Lacre, nombre provisional</p>
+          <div class="layout-cluster layout-cluster--lg syx-items-end">
+            <h1 class="lacre-hero__title" id="titulo">Lacre</h1>
+            <svg class="lacre-seal" viewBox="0 0 100 100" role="img" aria-labelledby="sello-titulo">
+              <title id="sello-titulo">Sello rojo con la L de la tipografía</title>
+              <circle class="lacre-seal__wax" cx="50" cy="50" r="50"/>
+              <text class="lacre-seal__letter" x="50" y="68" font-size="54" text-anchor="middle">L</text>
+            </svg>
+          </div>
+          <p class="lacre-hero__lead">Una tipografía de plumilla y cincel para una empresa de salas de escape. La dibujó un agente por código, de principio a fin, con la skill abierta <a class="atom-link atom-link--primary" href="https://github.com/Pizarradas/syx--typography">syx--typography</a>: cada curva sale de una regla y cada regla está comprobada.</p>
+          <div class="layout-cluster layout-cluster--lg lacre-meta">
+            <span>v0.5.2</span><span>Regular</span><span>115 glifos</span><span>Español</span><span class="syx-text-primary">Libre, OFL 1.1</span>
+          </div>
+          <div class="mol-btn-group">
+            <a class="atom-btn atom-btn--primary atom-btn--filled" href="#descargar">Descargar la fuente</a>
+            <a class="atom-btn atom-btn--secondary" href="#proceso">Cómo se hizo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Probar ------------------------------------------------------------------------------>
+    <section class="lacre-section" id="probar" aria-labelledby="probar-titulo">
+      <div class="layout-grid">
+        <div class="layout-grid__col-xs-12 layout-stack layout-stack--lg">
+          <div class="layout-stack layout-stack--sm lacre-measure">
+            <p class="syx-type-overline syx-text-primary syx-m-0">01 — Probar</p>
+            <h2 class="atom-title atom-title--h2" id="probar-titulo">Escribe la pista de tu sala</h2>
+            <p class="atom-txt lacre-soft">El recuadro es editable. Lleva lo que la fuente tiene hoy: minúscula, versal, cifras, signos y acentos del español.</p>
+          </div>
+          <div class="lacre-tester" id="probador" contenteditable="true" role="textbox" aria-multiline="true" aria-label="Texto de prueba en Lacre" spellcheck="false">¿Quién guardó la llave del cerrojo?</div>
+          <div class="layout-grid__nested">
+            <div class="layout-grid__col-xs-12 layout-grid__col-md-5 layout-stack layout-stack--xs">
+              <label class="atom-label" for="tamano">Tamaño: <output id="tamano-valor" for="tamano">64</output> px</label>
+              <input class="lacre-range" id="tamano" type="range" min="16" max="160" step="2" value="64">
+            </div>
+            <div class="layout-grid__col-xs-12 layout-grid__col-md-7 layout-stack layout-stack--xs">
+              <span class="atom-label" id="frases-titulo">Frases de ejemplo</span>
+              <div class="mol-btn-group" role="group" aria-labelledby="frases-titulo">
+                <button class="atom-btn atom-btn--secondary atom-btn--size-sm" type="button" data-frase="¿Quién guardó la llave del cerrojo?">La llave</button>
+                <button class="atom-btn atom-btn--secondary atom-btn--size-sm" type="button" data-frase="ESCAPA EN 60 MINUTOS">Rótulo</button>
+                <button class="atom-btn atom-btn--secondary atom-btn--size-sm" type="button" data-frase="Sala 3: «Mira bajo el cuadro»">Pista</button>
+                <button class="atom-btn atom-btn--secondary atom-btn--size-sm" type="button" data-frase="¡Ñandú, cigüeña y pingüino!">Acentos</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Muestrario -------------------------------------------------------------------------->
+    <section class="lacre-section" id="glifos" aria-labelledby="glifos-titulo">
+      <div class="layout-grid">
+        <div class="layout-grid__col-xs-12 layout-stack layout-stack--lg">
+          <div class="layout-stack layout-stack--sm lacre-measure">
+            <p class="syx-type-overline syx-text-primary syx-m-0">02 — Muestrario</p>
+            <h2 class="atom-title atom-title--h2" id="glifos-titulo">106 caracteres y tres marcas</h2>
+            <p class="atom-txt lacre-soft">Las acentuadas son compuestas: la letra y su marca se colocan con anclas, y la misma marca sirve a cualquier letra que llegue descompuesta. Ante un acento, la i pierde el punto sola.</p>
+          </div>
+          <p class="lacre-specimen">Nominal mundo humano</p>
+          <p class="lacre-specimen lacre-specimen--shu">GUIJARRO KAYAK BURGO</p>
+          <p class="lacre-specimen">0123456789 ¿?¡! «»</p>
+          <ul class="lacre-glyphs" aria-label="Juego de caracteres">
+            <li class="lacre-glyphs__cell" title="U+0021 exclamation mark">!</li>
+            <li class="lacre-glyphs__cell" title="U+0022 quotation mark">&quot;</li>
+            <li class="lacre-glyphs__cell" title="U+0025 percent sign">%</li>
+            <li class="lacre-glyphs__cell" title="U+0027 apostrophe">&#x27;</li>
+            <li class="lacre-glyphs__cell" title="U+0028 left parenthesis">(</li>
+            <li class="lacre-glyphs__cell" title="U+0029 right parenthesis">)</li>
+            <li class="lacre-glyphs__cell" title="U+002C comma">,</li>
+            <li class="lacre-glyphs__cell" title="U+002D hyphen-minus">-</li>
+            <li class="lacre-glyphs__cell" title="U+002E full stop">.</li>
+            <li class="lacre-glyphs__cell" title="U+002F solidus">/</li>
+            <li class="lacre-glyphs__cell" title="U+0030 digit zero">0</li>
+            <li class="lacre-glyphs__cell" title="U+0031 digit one">1</li>
+            <li class="lacre-glyphs__cell" title="U+0032 digit two">2</li>
+            <li class="lacre-glyphs__cell" title="U+0033 digit three">3</li>
+            <li class="lacre-glyphs__cell" title="U+0034 digit four">4</li>
+            <li class="lacre-glyphs__cell" title="U+0035 digit five">5</li>
+            <li class="lacre-glyphs__cell" title="U+0036 digit six">6</li>
+            <li class="lacre-glyphs__cell" title="U+0037 digit seven">7</li>
+            <li class="lacre-glyphs__cell" title="U+0038 digit eight">8</li>
+            <li class="lacre-glyphs__cell" title="U+0039 digit nine">9</li>
+            <li class="lacre-glyphs__cell" title="U+003A colon">:</li>
+            <li class="lacre-glyphs__cell" title="U+003B semicolon">;</li>
+            <li class="lacre-glyphs__cell" title="U+003F question mark">?</li>
+            <li class="lacre-glyphs__cell" title="U+0041 latin capital letter a">A</li>
+            <li class="lacre-glyphs__cell" title="U+0042 latin capital letter b">B</li>
+            <li class="lacre-glyphs__cell" title="U+0043 latin capital letter c">C</li>
+            <li class="lacre-glyphs__cell" title="U+0044 latin capital letter d">D</li>
+            <li class="lacre-glyphs__cell" title="U+0045 latin capital letter e">E</li>
+            <li class="lacre-glyphs__cell" title="U+0046 latin capital letter f">F</li>
+            <li class="lacre-glyphs__cell" title="U+0047 latin capital letter g">G</li>
+            <li class="lacre-glyphs__cell" title="U+0048 latin capital letter h">H</li>
+            <li class="lacre-glyphs__cell" title="U+0049 latin capital letter i">I</li>
+            <li class="lacre-glyphs__cell" title="U+004A latin capital letter j">J</li>
+            <li class="lacre-glyphs__cell" title="U+004B latin capital letter k">K</li>
+            <li class="lacre-glyphs__cell" title="U+004C latin capital letter l">L</li>
+            <li class="lacre-glyphs__cell" title="U+004D latin capital letter m">M</li>
+            <li class="lacre-glyphs__cell" title="U+004E latin capital letter n">N</li>
+            <li class="lacre-glyphs__cell" title="U+004F latin capital letter o">O</li>
+            <li class="lacre-glyphs__cell" title="U+0050 latin capital letter p">P</li>
+            <li class="lacre-glyphs__cell" title="U+0051 latin capital letter q">Q</li>
+            <li class="lacre-glyphs__cell" title="U+0052 latin capital letter r">R</li>
+            <li class="lacre-glyphs__cell" title="U+0053 latin capital letter s">S</li>
+            <li class="lacre-glyphs__cell" title="U+0054 latin capital letter t">T</li>
+            <li class="lacre-glyphs__cell" title="U+0055 latin capital letter u">U</li>
+            <li class="lacre-glyphs__cell" title="U+0056 latin capital letter v">V</li>
+            <li class="lacre-glyphs__cell" title="U+0057 latin capital letter w">W</li>
+            <li class="lacre-glyphs__cell" title="U+0058 latin capital letter x">X</li>
+            <li class="lacre-glyphs__cell" title="U+0059 latin capital letter y">Y</li>
+            <li class="lacre-glyphs__cell" title="U+005A latin capital letter z">Z</li>
+            <li class="lacre-glyphs__cell" title="U+0061 latin small letter a">a</li>
+            <li class="lacre-glyphs__cell" title="U+0062 latin small letter b">b</li>
+            <li class="lacre-glyphs__cell" title="U+0063 latin small letter c">c</li>
+            <li class="lacre-glyphs__cell" title="U+0064 latin small letter d">d</li>
+            <li class="lacre-glyphs__cell" title="U+0065 latin small letter e">e</li>
+            <li class="lacre-glyphs__cell" title="U+0066 latin small letter f">f</li>
+            <li class="lacre-glyphs__cell" title="U+0067 latin small letter g">g</li>
+            <li class="lacre-glyphs__cell" title="U+0068 latin small letter h">h</li>
+            <li class="lacre-glyphs__cell" title="U+0069 latin small letter i">i</li>
+            <li class="lacre-glyphs__cell" title="U+006A latin small letter j">j</li>
+            <li class="lacre-glyphs__cell" title="U+006B latin small letter k">k</li>
+            <li class="lacre-glyphs__cell" title="U+006C latin small letter l">l</li>
+            <li class="lacre-glyphs__cell" title="U+006D latin small letter m">m</li>
+            <li class="lacre-glyphs__cell" title="U+006E latin small letter n">n</li>
+            <li class="lacre-glyphs__cell" title="U+006F latin small letter o">o</li>
+            <li class="lacre-glyphs__cell" title="U+0070 latin small letter p">p</li>
+            <li class="lacre-glyphs__cell" title="U+0071 latin small letter q">q</li>
+            <li class="lacre-glyphs__cell" title="U+0072 latin small letter r">r</li>
+            <li class="lacre-glyphs__cell" title="U+0073 latin small letter s">s</li>
+            <li class="lacre-glyphs__cell" title="U+0074 latin small letter t">t</li>
+            <li class="lacre-glyphs__cell" title="U+0075 latin small letter u">u</li>
+            <li class="lacre-glyphs__cell" title="U+0076 latin small letter v">v</li>
+            <li class="lacre-glyphs__cell" title="U+0077 latin small letter w">w</li>
+            <li class="lacre-glyphs__cell" title="U+0078 latin small letter x">x</li>
+            <li class="lacre-glyphs__cell" title="U+0079 latin small letter y">y</li>
+            <li class="lacre-glyphs__cell" title="U+007A latin small letter z">z</li>
+            <li class="lacre-glyphs__cell" title="U+00A1 inverted exclamation mark">¡</li>
+            <li class="lacre-glyphs__cell" title="U+00AA feminine ordinal indicator">ª</li>
+            <li class="lacre-glyphs__cell" title="U+00AB left-pointing double angle quotation mark">«</li>
+            <li class="lacre-glyphs__cell" title="U+00B0 degree sign">°</li>
+            <li class="lacre-glyphs__cell" title="U+00BA masculine ordinal indicator">º</li>
+            <li class="lacre-glyphs__cell" title="U+00BB right-pointing double angle quotation mark">»</li>
+            <li class="lacre-glyphs__cell" title="U+00BF inverted question mark">¿</li>
+            <li class="lacre-glyphs__cell" title="U+00C1 latin capital letter a with acute">Á</li>
+            <li class="lacre-glyphs__cell" title="U+00C9 latin capital letter e with acute">É</li>
+            <li class="lacre-glyphs__cell" title="U+00CD latin capital letter i with acute">Í</li>
+            <li class="lacre-glyphs__cell" title="U+00D1 latin capital letter n with tilde">Ñ</li>
+            <li class="lacre-glyphs__cell" title="U+00D3 latin capital letter o with acute">Ó</li>
+            <li class="lacre-glyphs__cell" title="U+00DA latin capital letter u with acute">Ú</li>
+            <li class="lacre-glyphs__cell" title="U+00DC latin capital letter u with diaeresis">Ü</li>
+            <li class="lacre-glyphs__cell" title="U+00E1 latin small letter a with acute">á</li>
+            <li class="lacre-glyphs__cell" title="U+00E9 latin small letter e with acute">é</li>
+            <li class="lacre-glyphs__cell" title="U+00ED latin small letter i with acute">í</li>
+            <li class="lacre-glyphs__cell" title="U+00F1 latin small letter n with tilde">ñ</li>
+            <li class="lacre-glyphs__cell" title="U+00F3 latin small letter o with acute">ó</li>
+            <li class="lacre-glyphs__cell" title="U+00FA latin small letter u with acute">ú</li>
+            <li class="lacre-glyphs__cell" title="U+00FC latin small letter u with diaeresis">ü</li>
+            <li class="lacre-glyphs__cell" title="U+0131 latin small letter dotless i">ı</li>
+            <li class="lacre-glyphs__cell" title="U+2013 en dash">–</li>
+            <li class="lacre-glyphs__cell" title="U+2014 em dash">—</li>
+            <li class="lacre-glyphs__cell" title="U+2018 left single quotation mark">‘</li>
+            <li class="lacre-glyphs__cell" title="U+2019 right single quotation mark">’</li>
+            <li class="lacre-glyphs__cell" title="U+201C left double quotation mark">“</li>
+            <li class="lacre-glyphs__cell" title="U+201D right double quotation mark">”</li>
+            <li class="lacre-glyphs__cell" title="U+2039 single left-pointing angle quotation mark">‹</li>
+            <li class="lacre-glyphs__cell" title="U+203A single right-pointing angle quotation mark">›</li>
+            <li class="lacre-glyphs__cell" title="U+20AC euro sign">€</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Descargar --------------------------------------------------------------------------->
+    <section class="lacre-section" id="descargar" aria-labelledby="descargar-titulo">
+      <div class="layout-grid">
+        <div class="layout-grid__col-xs-12 layout-stack layout-stack--lg">
+          <div class="layout-stack layout-stack--sm lacre-measure">
+            <p class="syx-type-overline syx-text-primary syx-m-0">03 — Descargar</p>
+            <h2 class="atom-title atom-title--h2" id="descargar-titulo">Versión de trabajo 0.5.2</h2>
+          </div>
+          <div class="mol-alert mol-alert--info lacre-measure" role="status">
+            <p class="mol-alert__title">Libre, con la SIL Open Font License 1.1</p>
+            <p class="mol-alert__body">Úsala, estúdiala, modifícala y redistribúyela, también en proyectos comerciales. Lo único que no permite es venderla sola, y sus derivados siguen en la misma licencia. <a class="atom-link atom-link--primary" href="OFL.txt">Lee la licencia</a>. El nombre es provisional: falta la búsqueda de marca.</p>
+          </div>
+          <div class="layout-grid__nested">
+            <article class="mol-card layout-grid__col-xs-12 layout-grid__col-md-6 layout-grid__col-lg-3">
+              <header class="mol-card__header"><h3 class="mol-card__title">Paquete completo</h3><span class="lacre-meta">ZIP</span></header>
+              <div class="mol-card__body"><p>TTF, OTF y WOFF2, con la licencia y un LÉEME de estado y procedencia.</p></div>
+              <footer class="mol-card__footer"><a class="atom-btn atom-btn--primary atom-btn--filled atom-btn--size-sm" href="descargas/GanzuaLacre-v0.5.2.zip" download>Descargar ZIP</a></footer>
+            </article>
+            <article class="mol-card layout-grid__col-xs-12 layout-grid__col-md-6 layout-grid__col-lg-3">
+              <header class="mol-card__header"><h3 class="mol-card__title">Escritorio</h3><span class="lacre-meta">TTF</span></header>
+              <div class="mol-card__body"><p>Para instalar en Windows, macOS o Linux.</p></div>
+              <footer class="mol-card__footer"><a class="atom-btn atom-btn--secondary atom-btn--size-sm" href="descargas/GanzuaLacre-Regular.ttf" download>Descargar TTF</a></footer>
+            </article>
+            <article class="mol-card layout-grid__col-xs-12 layout-grid__col-md-6 layout-grid__col-lg-3">
+              <header class="mol-card__header"><h3 class="mol-card__title">Edición</h3><span class="lacre-meta">OTF</span></header>
+              <div class="mol-card__body"><p>Contornos cúbicos, tal como salen del generador.</p></div>
+              <footer class="mol-card__footer"><a class="atom-btn atom-btn--secondary atom-btn--size-sm" href="descargas/GanzuaLacre-Regular.otf" download>Descargar OTF</a></footer>
+            </article>
+            <article class="mol-card layout-grid__col-xs-12 layout-grid__col-md-6 layout-grid__col-lg-3">
+              <header class="mol-card__header"><h3 class="mol-card__title">Web</h3><span class="lacre-meta">WOFF2</span></header>
+              <div class="mol-card__body"><p>5,4 KB, comprobado: no pierde caracteres ni funciones.</p></div>
+              <footer class="mol-card__footer"><a class="atom-btn atom-btn--secondary atom-btn--size-sm" href="fonts/GanzuaLacre-Regular.woff2" download>Descargar WOFF2</a></footer>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proceso ----------------------------------------------------------------------------->
+    <section class="lacre-section" id="proceso" aria-labelledby="proceso-titulo">
+      <div class="layout-grid">
+        <div class="layout-grid__col-xs-12 layout-stack layout-stack--xl">
+          <div class="layout-stack layout-stack--sm lacre-measure">
+            <p class="syx-type-overline syx-text-primary syx-m-0">04 — Proceso</p>
+            <h2 class="atom-title atom-title--h2" id="proceso-titulo">De una frase a una fuente comprobada</h2>
+            <p class="atom-txt lacre-soft">Todo esto pasó en un día de trabajo entre una persona y un agente. La persona decidía; el agente dibujaba, medía y enseñaba pruebas.</p>
+          </div>
+
+          <div class="layout-grid__nested syx-mb-5">
+            <div class="layout-grid__col-xs-6 layout-grid__col-md-3"><div class="atom-stat"><span class="atom-stat__number">115</span><span class="atom-stat__label">glifos</span></div></div>
+            <div class="layout-grid__col-xs-6 layout-grid__col-md-3"><div class="atom-stat"><span class="atom-stat__number">0</span><span class="atom-stat__label">errores en la auditoría</span></div></div>
+            <div class="layout-grid__col-xs-6 layout-grid__col-md-3"><div class="atom-stat"><span class="atom-stat__number">20°</span><span class="atom-stat__label">eje de la plumilla</span></div></div>
+            <div class="layout-grid__col-xs-6 layout-grid__col-md-3"><div class="atom-stat"><span class="atom-stat__number">26°</span><span class="atom-stat__label">corte de cincel</span></div></div>
+          </div>
+
+          <!-- 0 -->
+          <article class="layout-grid__nested">
+            <div class="layout-grid__col-xs-12 layout-grid__col-md-7 layout-stack layout-stack--sm">
+              <p class="syx-type-overline syx-text-primary syx-m-0">Fase 0 / Concepto</p>
+              <h3 class="atom-title atom-title--h3">Tres direcciones, una elección</h3>
+              <p class="atom-txt">El encargo cabía en una línea: una tipografía para una empresa de salas de escape. El agente escribió el brief (para qué existe, dónde se usa, qué idiomas) y bocetó tres direcciones deliberadamente lejanas en una sola hoja.</p>
+              <ul class="atom-list atom-list--primary">
+                <li class="atom-list__item"><strong>Cerrojo</strong>: stencil geométrica; el puente es un pestillo.</li>
+                <li class="atom-list__item"><strong>Paletón</strong>: condensada con una muesca de llave en clave.</li>
+                <li class="atom-list__item"><strong>Lacre</strong>: plumilla ancha a 20° y terminales cortados a cincel. La elegida.</li>
+              </ul>
+            </div>
+            <figure class="lacre-figure layout-grid__col-xs-12 layout-grid__col-md-5">
+              <img class="lacre-figure__img" src="img/direcciones.webp" width="824" height="1288" loading="lazy" alt="Hoja de bocetos con las tres direcciones, Cerrojo, Paletón y Lacre, escribiendo ESCAPE, CAOS PASE y HOPE noon.">
+              <figcaption class="lacre-figure__caption">La hoja de bocetos de la fase 0, tal como se enseñó.</figcaption>
+            </figure>
+          </article>
+
+          <!-- 1 -->
+          <article class="layout-grid__nested">
+            <div class="layout-grid__col-xs-12 layout-grid__col-md-6 layout-stack layout-stack--sm">
+              <p class="syx-type-overline syx-text-primary syx-m-0">Fase 1 / Prueba de concepto</p>
+              <h3 class="atom-title atom-title--h3">Una plumilla escrita como ecuación</h3>
+              <p class="atom-txt">Primero n, o, H y O; después a, d, e, h y s. Cada trazo es un esqueleto con nodos, y su grosor no se dibuja: sale de la dirección del trazo respecto a una plumilla de punta ancha inclinada 20°.</p>
+              <p class="atom-txt">Los extremos libres se cortan a cincel, 26° sobre la perpendicular del trazo, y el ángulo se resuelve contra los bordes reales hasta que no cambia. Así se ven los cortes en n, en la pierna de la R o en la cola de la l.</p>
+            </div>
+            <div class="layout-grid__col-xs-12 layout-grid__col-md-6 layout-stack layout-stack--sm">
+              <pre class="lacre-formula" tabindex="0" aria-label="Fórmula del grosor del trazo"><code>grosor(θ) = fino + (asta − fino) · |sen(θ − 20°)|
+
+asta = 120   fino = 38   (unidades de 1000 por eme)</code></pre>
+              <p class="atom-txt lacre-soft">Con esa regla, un trazo horizontal no mide el fino: mide 66. Colocarlo con el grosor nominal habría duplicado los rebasamientos sin que nadie lo viera en una prueba. La skill ahora coloca cada nodo con su grosor real.</p>
+            </div>
+          </article>
+
+          <!-- 1b -->
+          <article class="layout-grid__nested">
+            <div class="layout-grid__col-xs-12 layout-grid__col-md-6 layout-stack layout-stack--sm">
+              <p class="syx-type-overline syx-text-primary syx-m-0">Auditoría matemática</p>
+              <h3 class="atom-title atom-title--h3">Lo que una prueba en PNG no enseña</h3>
+              <p class="atom-txt">Antes de seguir, la persona pidió que todo fuera matemáticamente correcto. De ahí salió un verificador que mide con tolerancias explícitas y se pone a prueba a sí mismo con defectos inyectados.</p>
+            </div>
+            <div class="layout-grid__col-xs-12 layout-grid__col-md-6">
+              <ul class="atom-list atom-list--primary">
+                <li class="atom-list__item">Rebasamientos exactos: 14 unidades, ni una más.</li>
+                <li class="atom-list__item">Curvas G2: continuidad de curvatura y tensión no mayor de 0,80.</li>
+                <li class="atom-list__item">Sin quiebros al redondear a enteros, ni espolones, ni islas.</li>
+                <li class="atom-list__item">Cada corte de cincel, medido y dentro de su tolerancia.</li>
+                <li class="atom-list__item">Laterales medidos desde la tinta, no desde la caja del dibujo.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 2 -->
+          <article class="layout-grid__nested">
+            <div class="layout-grid__col-xs-12 layout-grid__col-md-6 layout-stack layout-stack--sm">
+              <p class="syx-type-overline syx-text-primary syx-m-0">Fase 2 / Primer borrador</p>
+              <h3 class="atom-title atom-title--h3">El juego completo del español</h3>
+              <p class="atom-txt">Minúscula, versal, cifras, puntuación española con sus signos de apertura, comillas latinas, el euro y los ordinales. Las rectas que acaban en una zona se cortan subiendo 26° con el extremo justo en la zona; si el trazo va casi en la dirección del corte, el corte se vuelve horizontal para no dejar agujas.</p>
+            </div>
+            <div class="layout-grid__col-xs-12 layout-grid__col-md-6 layout-stack layout-stack--sm">
+              <p class="atom-txt">Las marcas (agudo, diéresis, virgulilla) tienen su versión para versales, más baja y plana. La virgulilla necesitó una plumilla propia: con la general, la onda era más baja que el grosor del trazo y se convertía en una mancha.</p>
+              <p class="lacre-specimen">ñ Ñ á Á ü Ü í</p>
+            </div>
+          </article>
+
+          <!-- Retícula -->
+          <article class="layout-grid__nested" aria-labelledby="reticula-titulo">
+            <div class="layout-grid__col-xs-12 layout-grid__col-md-5 layout-stack layout-stack--sm">
+              <p class="syx-type-overline syx-text-primary syx-m-0">Retícula de decisiones</p>
+              <h3 class="atom-title atom-title--h3" id="reticula-titulo">Cada medida, con su origen</h3>
+              <p class="atom-txt">Al final, todas las alturas de unión y barra, las anchuras y los laterales pasaron a un único archivo, derivado de los glifos aprobados. Salirse de él exige declarar una corrección óptica con su motivo.</p>
+              <p class="atom-txt">El cambio encontró una m con las contraformas un 16 % más estrechas que la n por accidente, una N y una M demasiado negras y una U y una J que colgaban 69 unidades bajo la línea base. Compáralo:</p>
+              <fieldset class="layout-cluster layout-cluster--md syx-mb-4">
+                <legend class="atom-label">Versión</legend>
+                <label class="atom-radio"><input class="atom-radio__input" type="radio" name="version" value="v05" checked><span class="atom-radio__label">0.5, sobre la retícula</span></label>
+                <label class="atom-radio"><input class="atom-radio__input" type="radio" name="version" value="v04"><span class="atom-radio__label">0.4, antes</span></label>
+              </fieldset>
+            </div>
+            <div class="layout-grid__col-xs-12 layout-grid__col-md-7 layout-stack layout-stack--sm" id="comparacion" aria-live="polite">
+              <p class="lacre-specimen">NOMINAL</p>
+              <p class="lacre-specimen">MUNDO HUMANO</p>
+              <p class="lacre-specimen">mínimo numen</p>
+            </div>
+          </article>
+
+          <!-- Verificación -->
+          <article class="layout-grid__nested">
+            <div class="layout-grid__col-xs-12 layout-grid__col-md-6 layout-stack layout-stack--sm">
+              <p class="syx-type-overline syx-text-primary syx-m-0">Comprobación y procedencia</p>
+              <h3 class="atom-title atom-title--h3">Puertas que no se saltan</h3>
+              <p class="atom-txt">La fuente compila con un comando, pasa el validador OTS y las pruebas de conformación con HarfBuzz, y cubre el español según Hyperglot. Cada glifo tiene su origen registrado, y cada versión, un sello con el hash de sus fuentes.</p>
+            </div>
+            <div class="layout-grid__col-xs-12 layout-grid__col-md-6">
+              <ul class="atom-list atom-list--primary">
+                <li class="atom-list__item">Auditoría matemática: <strong>0 errores</strong></li>
+                <li class="atom-list__item">Fuentes y compatibilidad: <strong>0 errores</strong></li>
+                <li class="atom-list__item">OTS: <strong>Limpio</strong></li>
+                <li class="atom-list__item">Conformación: <strong>Superada</strong></li>
+                <li class="atom-list__item">Español (Hyperglot): <strong>Soportado</strong></li>
+                <li class="atom-list__item">Procedencia: <strong>115 de 115 glifos</strong></li>
+              </ul>
+            </div>
+          </article>
+
+          <div class="mol-alert mol-alert--info lacre-measure" role="status">
+            <p class="mol-alert__title">Quién la dibujó</p>
+            <p class="mol-alert__body">Las formas las decidió y dibujó un agente de IA (Claude) por código, siguiendo el brief; la persona eligió la dirección, aprobó la fase 1 y dirigió cada paso. El registro de procedencia lo dice glifo a glifo: «generado por IA», no «hecho a mano».</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- La skill ---------------------------------------------------------------------------->
+    <section class="lacre-section" id="skill" aria-labelledby="skill-titulo">
+      <div class="layout-grid">
+        <div class="layout-grid__col-xs-12 layout-stack layout-stack--lg">
+          <div class="layout-stack layout-stack--sm lacre-measure">
+            <p class="syx-type-overline syx-text-primary syx-m-0">05 — La skill</p>
+            <h2 class="atom-title atom-title--h2" id="skill-titulo">syx--typography, para cualquier agente</h2>
+            <p class="atom-txt lacre-soft">Es una Agent Skill abierta: instrucciones, referencias y scripts que un agente lee y ejecuta. No depende de un modelo concreto. Organiza el trabajo como un equipo de fundición, por fases, y no deja pasar a la siguiente sin superar su puerta.</p>
+          </div>
+
+          <ol class="atom-list atom-list--ordered lacre-measure">
+            <li class="atom-list__item"><strong>Concepto</strong>: brief y razón de existir. Puerta: qué mejora, y primer sello.</li>
+            <li class="atom-list__item"><strong>Prueba de concepto</strong>: n, o, H, O. Puerta: la idea se lee en palabras y la persona la aprueba.</li>
+            <li class="atom-list__item"><strong>Primer borrador</strong>: todo el alfabeto sobre la retícula. Puerta: ninguna medida suelta y color uniforme.</li>
+            <li class="atom-list__item"><strong>Familia</strong>: pesos, anchuras, cursiva. Puerta: másteres compatibles.</li>
+            <li class="atom-list__item"><strong>Cobertura</strong>: diacríticos e idiomas. Puerta: texto real correcto.</li>
+            <li class="atom-list__item"><strong>Ingeniería</strong>: kerning, funciones, métricas. Puerta: compilación y conformación.</li>
+            <li class="atom-list__item"><strong>Calidad</strong>: auditoría automática y revisión humana.</li>
+            <li class="atom-list__item"><strong>Publicación</strong>: WOFF2, licencia y procedencia completa.</li>
+          </ol>
+
+          <div class="atom-table__container atom-table--resp" role="region" aria-label="Herramientas de la skill" tabindex="0">
+            <table class="atom-table">
+              <thead><tr><th class="atom-table__th" scope="col">Script</th><th class="atom-table__th" scope="col">Para qué sirvió aquí</th></tr></thead>
+              <tbody>
+                <tr><td class="atom-table__td"><code class="atom-code atom-code--inline">sketch.py</code></td><td class="atom-table__td">La hoja de las tres direcciones.</td></tr>
+                <tr><td class="atom-table__td"><code class="atom-code atom-code--inline">motor.py</code>, <code class="atom-code atom-code--inline">cincel.py</code></td><td class="atom-table__td">Trazos de plumilla y cortes a cincel con ángulo exacto.</td></tr>
+                <tr><td class="atom-table__td"><code class="atom-code atom-code--inline">reglas.py</code></td><td class="atom-table__td">Grosor real, avance desde la tinta, curvas G2, tiradores en la rejilla.</td></tr>
+                <tr><td class="atom-table__td"><code class="atom-code atom-code--inline">reticula.py</code></td><td class="atom-table__td">Lista las medidas estructurales que no salen de la retícula.</td></tr>
+                <tr><td class="atom-table__td"><code class="atom-code atom-code--inline">verificar.py</code></td><td class="atom-table__td">La auditoría matemática, con autoprueba.</td></tr>
+                <tr><td class="atom-table__td"><code class="atom-code atom-code--inline">build.py</code>, <code class="atom-code atom-code--inline">proof.py</code></td><td class="atom-table__td">Compilación con OTS y conformación; pruebas en PNG.</td></tr>
+                <tr><td class="atom-table__td"><code class="atom-code atom-code--inline">coverage.py</code>, <code class="atom-code atom-code--inline">web_export.py</code></td><td class="atom-table__td">Cobertura del español y el WOFF2 de esta página.</td></tr>
+                <tr><td class="atom-table__td"><code class="atom-code atom-code--inline">registro.py</code></td><td class="atom-table__td">Procedencia por glifo y sellos con hash.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="layout-stack layout-stack--sm lacre-measure">
+            <h3 class="atom-title atom-title--h4">Instalarla</h3>
+            <p class="atom-txt">Copia la carpeta en el directorio de skills de tu agente con el nombre <code class="atom-code atom-code--inline">diseno-tipografias</code> y pídele una tipografía.</p>
+            <pre class="atom-code" tabindex="0" role="group" aria-label="Instalación de la skill"><code>git clone https://github.com/Pizarradas/syx--typography diseno-tipografias</code></pre>
+            <div class="mol-btn-group">
+              <a class="atom-btn atom-btn--primary atom-btn--filled atom-btn--has-icon" href="https://github.com/Pizarradas/syx--typography"><span class="atom-icon atom-icon--lc-github atom-icon--sm" aria-hidden="true"></span> La skill en GitHub</a>
+              <a class="atom-btn atom-btn--secondary" href="https://github.com/Pizarradas/ganzua-lacre">El código de esta página</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lo que falta ------------------------------------------------------------------------>
+    <section class="lacre-section" id="pendiente" aria-labelledby="pendiente-titulo">
+      <div class="layout-grid">
+        <div class="layout-grid__col-xs-12 layout-grid__col-md-8 layout-stack layout-stack--sm">
+          <p class="syx-type-overline syx-text-primary syx-m-0">06 — Lo que falta</p>
+          <h2 class="atom-title atom-title--h3" id="pendiente-titulo">Una versión de trabajo, dicho claramente</h2>
+          <ul class="atom-list atom-list--primary">
+            <li class="atom-list__item">Nombre definitivo y búsqueda de marca.</li>
+            <li class="atom-list__item">Kerning: hoy solo hay espaciado por clases de borde.</li>
+            <li class="atom-list__item">Arroba, et y signos de uso menos frecuente.</li>
+            <li class="atom-list__item">Prueba impresa al cuerpo real de uso y revisión en Windows, macOS y Word.</li>
+            <li class="atom-list__item">Más pesos: el generador ya los admite; falta dibujarlos y comprobarlos.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="lacre-footer">
+    <div class="layout-grid">
+      <div class="layout-grid__col-xs-12 layout-stack layout-stack--xs">
+        <p class="atom-txt">Dirección: José Luis Pizarro. Tipografía generada con la skill <a class="atom-link" href="https://github.com/Pizarradas/syx--typography">syx--typography</a>. Página construida con <a class="atom-link" href="https://github.com/pizarradas/syx">SYX</a>.</p>
+        <p class="atom-txt">Ganzúa Lacre v0.5.2, noviembre de 2026. Fuente bajo la SIL Open Font License 1.1.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

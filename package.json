@@ -1,0 +1,12 @@
+{
+  "name": "lacre",
+  "version": "0.5.0",
+  "private": true,
+  "description": "Página de descarga y proceso de Ganzúa Lacre, construida sobre SYX.",
+  "syx": {
+    "theme": "example-01"
+  },
+  "dependencies": {
+    "syx-design-system": "^5.1.0"
+  }
+}
